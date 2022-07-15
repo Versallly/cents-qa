@@ -35,7 +35,7 @@ const items = require( '../fixtures/items.json' ),
                       imgLink = items.item1.img;
                 cy.centsLogin( user );
                 cy.title().should( 'eq', data.titles.inventory );
-                cy.get(`#item_${id}_img_link`).find('img').should('have.attr', 'src').and('contain', `${imgLink}`);
+                inventory.itemImgCheckSrc( id, imgLink );
         });
         }); 
         afterEach( () => { // resetting the state
