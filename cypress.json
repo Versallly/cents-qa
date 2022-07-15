@@ -1,0 +1,5 @@
+{
+    "baseUrl":"https://qa-challenge.codesubmit.io",
+    "chromeWebSecurity": false,
+    "retries": 0
+}

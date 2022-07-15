@@ -1,0 +1,47 @@
+{
+  "users": {
+    "standard": {
+      "login": "standard_user",
+      "password": "secret_sauce"
+    },
+    "wrongUsername": {
+      "login": "standard_use",
+      "password": "secret_sauce"
+    },
+    "wrongPass": {
+      "login": "standard_user",
+      "password": "secret_sauc"
+    },
+    "locked": {
+      "login": "locked_out_user",
+      "password": "secret_sauce"
+    },
+    "problem": {
+      "login": "problem_user",
+      "password": "secret_sauce"
+    },
+    "performanceGlitch": {
+      "login": "performance_glitch_user",
+      "password": "secret_sauce"
+    }
+  },
+  "titles":{
+    "login": "Swag Labs",
+    "cart": "Swag Labs",
+    "inventory": "Swag Labs",
+    "checkoutData": "Swag Labs",
+    "checkoutOverview": "Swag Labs",
+    "checkoutConfirmation": "Swag Labs"
+  },
+  "errors":{
+    "locked": "Epic sadface: Sorry, this user has been locked out.",
+    "wrongCredentials": "Epic sadface: Username and password do not match any user in this service",
+    "usernameReq": "Epic sadface: Username is required",
+    "passwordReq": "Epic sadface: Password is required"
+  },
+  "checkoutData":{
+    "firstName": "Vitaly",
+    "lastName": "Ivanov",
+    "zip": "10312"
+  }
+}
