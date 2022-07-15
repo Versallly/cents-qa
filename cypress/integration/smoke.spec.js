@@ -24,29 +24,29 @@ const items = require( '../fixtures/items.json' ),
             cy.visit( '/' );
         });
         usersList.forEach( ( user ) => {
-            it.only( `User is able to order an item ${user.login}`, function(){
+            it( `User is able to order an item ${user.login}`, function(){
                 const price = items.item1.price,
                 taxRate = 0.08,
                 tax = Math.ceil( ( price * taxRate )*100 )/100,
                 total = price + tax;
-                    cy.centsLogin( user );
-                    cy.title().should( 'eq', data.titles.inventory );
-                    inventory.addToCart( items.item1.tag ).click();
-                    header.cartBtn().click();
-                    cy.title().should( 'eq', data.titles.cart );
-                    cart.itemName().contains( items.item1.name ).should( 'be.visible' );
-                    cy.get('button').contains('Checkout').click();
-                    cy.title().should( 'eq', data.titles.checkoutData );
-                    checkout.firstName().type( data.checkoutData.firstName );
-                    checkout.lastName().type( data.checkoutData.lastName );
-                    checkout.postal().type( data.checkoutData.zip );
-                    checkout.continueBtn().click();
-                    cy.title().should( 'eq', data.titles.checkoutOverview );
-                    cart.itemName().contains( items.item1.name ).should( 'be.visible' );
-                    checkout.subtotal( price ).should( 'be.visible' );
-                    checkout.tax( tax ).should( 'be.visible' );
-                    checkout.total( total ).should( 'be.visible' );
-                    checkout.finishBtn().click();
+                cy.centsLogin( user );
+                cy.title().should( 'eq', data.titles.inventory );
+                inventory.addToCart( items.item1.tag ).click();
+                header.cartBtn().click();
+                cy.title().should( 'eq', data.titles.cart );
+                cart.itemName().contains( items.item1.name ).should( 'be.visible' );
+                cy.get('button').contains('Checkout').click();
+                cy.title().should( 'eq', data.titles.checkoutData );
+                checkout.firstName().type( data.checkoutData.firstName );
+                checkout.lastName().type( data.checkoutData.lastName );
+                checkout.postal().type( data.checkoutData.zip );
+                checkout.continueBtn().click();
+                cy.title().should( 'eq', data.titles.checkoutOverview );
+                cart.itemName().contains( items.item1.name ).should( 'be.visible' );
+                checkout.subtotal( price ).should( 'be.visible' );
+                checkout.tax( tax ).should( 'be.visible' );
+                checkout.total( total ).should( 'be.visible' );
+                checkout.finishBtn().click();
             });
         }); 
 

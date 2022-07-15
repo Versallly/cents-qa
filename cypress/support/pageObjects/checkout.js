@@ -22,16 +22,16 @@ finishBtn(){
 
 ///////////CHECKOUT: YOUR INFORMATION
 firstName(){
-    return cy.get( '[data-test="firstName"]' )
+    return cy.get( '[data-test="firstName"]' );
 }
 lastName(){
-    return cy.get( '[data-test="lastName"]' )
+    return cy.get( '[data-test="lastName"]' );
 }
 postal(){
-    return cy.get( '[data-test="postalCode"]' )
+    return cy.get( '[data-test="postalCode"]' );
 }
 continueBtn(){
-    return cy.get( '[data-test="continue"]' )
+    return cy.get( '[data-test="continue"]' );
 }
 
 }

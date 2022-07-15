@@ -19,11 +19,11 @@ const data = require( '../fixtures/data.json' ),
         });
         usersList.forEach( ( user ) => {
             it( `Login using valid credentials ${user.login}`, function(){
-                    cy.visit( '/' );
-                    header.cartBtn().should( 'not.exist' );
-                    cy.centsLogin( user );
-                    cy.title().should( 'eq', data.titles.inventory );
-                    header.cartBtn().should( 'be.visible' );
+                cy.visit( '/' );
+                header.cartBtn().should( 'not.exist' );
+                cy.centsLogin( user );
+                cy.title().should( 'eq', data.titles.inventory );
+                header.cartBtn().should( 'be.visible' );
             
             });
             it( `Logout from the Logged in state ${user.login}`, function(){
